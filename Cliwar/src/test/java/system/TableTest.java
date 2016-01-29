@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package system;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,11 +7,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import system.Table;
+import java.util.Arrays;
 
-/**
- *
- * @author migho
- */
+
 public class TableTest {
     
     Table table;
@@ -46,4 +40,18 @@ public class TableTest {
             AntaaKortin();
     }
     
+    @Test
+    public void EiVoiPaivittaaEpapatevaaKorttia() {
+        assertFalse(table.updateKortti(-1));
+        assertFalse(table.updateKortti(6));
+    }
+    
+    @Test
+    public void KorttienPaivitysOnnistuu() {
+        int[] kortit1 = table.getKortit().clone();
+        for(int i=0; i<6; i++)
+            assertTrue("Kortin vaihto epäonnistui. ", table.updateKortti(i));
+        int[] kortit2 = table.getKortit();
+        assertFalse("Kortit eivät vaihtuneet", Arrays.equals(kortit1, kortit2));
+    }
 }

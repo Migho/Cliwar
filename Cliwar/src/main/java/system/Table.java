@@ -18,7 +18,6 @@ public class Table {
     }
     
     public int[] getKortit() {
-        System.out.println("Palautetaan kaikki kortit");
         return kortit;
     }
     
@@ -30,11 +29,13 @@ public class Table {
         int kortti;
         if(i >=0 && i <=2) {
             kortti = deck1.annaKortti();
+            //System.out.println("saatiin kortti " + kortti + ", joka korvaa kortin " + kortit[i]);
             if(kortti==-1) return false;
             deck1.lisaaKortti(kortit[i]);
             kortit[i] = kortti;
         } else if(i >=3 && i <=5) {
             kortti = deck2.annaKortti();
+            //System.out.println("saatiin kortti " + kortti + ", joka korvaa kortin " + kortit[i]);
             if(kortti==-1) return false;
             deck2.lisaaKortti(kortit[i]);
             kortit[i] = kortti;
