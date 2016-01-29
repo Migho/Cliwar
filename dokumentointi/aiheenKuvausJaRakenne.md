@@ -1,6 +1,6 @@
 **Aihe:** Toteutetaan peli nimeltään Cliwar. Pelissä kaksi pelaajaa pelaavat toisiaan vastaan splitscreenillä. Molemmilla pelaajilla on oma hahmo ja käytössään yhteiset kortit, joita he voivat pelata: kortit vaihtuvat ajoittain ja niiden pelaaminen voi vaikuttaa omaan, vastustajan, tai molempien peliin. Molemmilla pelaajilla on energiaa ja tuottavat sitä ajan myötä itselleen lisää. Energian avulla voi pelata kortteja, joiden avulla voi vaikuttaa pelin kulkuun. Jos vihollisen HP tippuu nollaan, häviää pelin. Peli on nopeuspeli, ja sen kesto on 2-10min.
 
-Esimerkkejä korteista: lisää itselle lisää HP:ta, lisää itselle magic- tai physical damage resistancea, vahingoita vastustajaa magic- tai physical damagella, nosta omaa energialimittiä, vie viholliselta HP:ta jne.
+Esimerkkejä korteista: lisää itselle lisää HP:ta, lisää itselle magic- tai physical damage resistancea, vahingoita vastustajaa magic- tai physical damagella, nosta omaa energialimittiä, vie viholliselta HP:ta itselle, vahingoita molempia jne.
 
 **Käyttäjät:** Erilaisia käyttäjiä ei ole. On vain kaksi pelaajaa, joilla molemmilla on samat oikeudet.
 
