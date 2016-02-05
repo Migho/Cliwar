@@ -4,6 +4,12 @@ import java.io.File;
 import java.util.Random;
 import java.util.Scanner;
 
+/*
+ * Korttien asetustiedosto noudattaa seuraavaa kaavaa:
+ * 1. rivi: eri korttien määrä
+ * Loput rivit: riveittäin tietyn kortin määrä. Toinen rivi vastaa korttia id: 0
+*/
+
 public class Deck {
     private int korttienmaara=0;
     private int kortit[];
@@ -26,11 +32,10 @@ public class Deck {
             throw new Error();
     }
     
-   private boolean DeckConstruct(File tiedosto) {
+    private boolean DeckConstruct(File tiedosto) {
         String rivi;
         Scanner lukija = null;
         try {
-            System.out.println(tiedosto.getCanonicalPath());
             lukija = new Scanner(tiedosto);
         } catch (Exception e) {
             System.out.println("Tiedoston lukeminen epäonnistui. Virhe: " + e.getMessage());
@@ -48,7 +53,7 @@ public class Deck {
             korttienmaara+=kortit[i];
             i++;
         }
-        System.out.println("Tiedoston luku onnistui");
+        //System.out.println("Tiedoston luku onnistui");
         return true;
     }
     

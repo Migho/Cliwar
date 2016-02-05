@@ -9,7 +9,6 @@ import static org.junit.Assert.*;
 import system.Table;
 import java.util.Arrays;
 
-
 public class TableTest {
     
     Table table;
@@ -54,4 +53,5 @@ public class TableTest {
         int[] kortit2 = table.getKortit();
         assertFalse("Kortit eivät vaihtuneet", Arrays.equals(kortit1, kortit2));
     }
+    
 }
