@@ -9,3 +9,5 @@
 **4.2.2016** 2h, yleistä ohjelman rakenteen suunnittelua
 
 **5.2.2016** 7h, koodin toteuttaminen & koodikatselmointi. Deadline3 valmis
+
+**12.2.2016** 6h, koodin toteuttaminen. Kiireiden vuoksi osa testauksista on tekemättä. Logiikka on 95% valmis.
