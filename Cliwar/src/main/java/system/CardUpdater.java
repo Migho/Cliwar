@@ -3,6 +3,10 @@ package system;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Luokka päivittää automaattisesti luokan Table kortteja.
+ */
+
 public class CardUpdater extends Thread {
     
     private Table table;

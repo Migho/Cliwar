@@ -3,6 +3,10 @@ package system;
 import java.io.File;
 import java.util.Scanner;
 
+/**
+ * Luokka lataa asetustiedostosta eri korttien ominaisuudet ja pitää niistä kirjaa.
+ */
+
 /* 
  * Korttien asetustiedosto noudattaa seuraavaa kaavaa:
  * 1. rivi skipataan
@@ -10,14 +14,13 @@ import java.util.Scanner;
  * loput rivit: card_id, energy_cost, p-dmg_emeny, p-dmg_self, m-dmg_emeny,
  *  m-dmg_self, pure-dmg_emeny, pure-dmg_self, armor-mod_emeny, armor-mod_self,
  *  mResistance-mod_emeny, mResistance-mod_self, energy/s_emeny, energy/s_self.
- * Tämän jälkeen hypätään seuraavalle riville (mahdollistaa kommentoinnin).
- * Eli yhteensä 14 eri lukua/rivi välilyönnein eriteltynä
+ * Eli yhteensä ID + 13 eri lukua/rivi välilyönnein eriteltynä
 */
 
 public class CardDatabase {
     
     private int[][] kortit;
-    final private int asetustenMaara=14;
+    final private int asetustenMaara=13;
     private int korttienMaara=0;
     
     public CardDatabase() {
@@ -47,13 +50,13 @@ public class CardDatabase {
         lukija.nextLine();
         korttienMaara = Integer.parseInt(lukija.nextLine());
         kortit = new int[korttienMaara][asetustenMaara];
-        int i=0;
+        int i;
         while (lukija.hasNextLine()) {
+            i = lukija.nextInt();
             for(int j=0; j<asetustenMaara; j++) {
                 kortit[i][j] = lukija.nextInt();
             }
             lukija.nextLine();
-            i++;
         }
         //System.out.println("Tiedoston luku onnistui");
         return true;

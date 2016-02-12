@@ -4,11 +4,15 @@ import java.io.File;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Luokka pitää kirjaa korttipinosta ja palauttaa 
+ */
+
 /*
  * Korttien asetustiedosto noudattaa seuraavaa kaavaa:
  * 1. rivi: eri korttien määrä
  * Loput rivit: riveittäin tietyn kortin määrä. Toinen rivi vastaa korttia id: 0
-*/
+ */
 
 public class Deck {
     private int korttienmaara=0;

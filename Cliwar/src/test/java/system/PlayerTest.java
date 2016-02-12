@@ -62,4 +62,19 @@ public class PlayerTest {
         assertTrue(i==player.getStats()[0]);
     }
     
+    @Test
+    public void energiaEiVoiNoustaRajattomasti() {
+        player.changeEnergy(999);
+        int i=player.getStats()[3];
+        player.changeEnergy(1);
+        assertTrue(i==player.getStats()[3]);
+    }
+    
+    @Test
+    public void energiaEiLaskeJosSitäEiOleTarpeeksi() {
+        int i=player.getStats()[3];
+        assertFalse(player.changeEnergy(-999));
+        assertTrue(i==player.getStats()[3]);
+    }
+    
 }

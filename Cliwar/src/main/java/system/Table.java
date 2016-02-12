@@ -1,6 +1,8 @@
 package system;
 
-
+/**
+ * Luokka huolehtii pelipöydän korttikokonaisuudesta.
+ */
 public class Table {
     
     private Deck deck1;
@@ -19,22 +21,43 @@ public class Table {
         cardUpdater = new CardUpdater(this);
     }
     
+    /**
+     * Käynnistää korttien päivittäjän.
+     */
     public void startActivity() {
         cardUpdater.start();
     }
     
+    /**
+     * Pysäyttää korttien päivittäjän.
+     */
     public void stopActivity() {
         cardUpdater.stopRunning();
     }
     
+    /**
+     * Metodi palauttaa pöydän kaikki kortit taulukkona
+     * @return      integer-taulukko joka sisältää kaikki kortit.
+     */
     public int[] getKortit() {
         return kortit;
     }
     
-    public int getKortti(int i) {
-        return kortit[i];
+    /**
+     * Metodi palauttaa pöydältä halutun kortin.
+     * tilalle uuden.
+     * @param kortti    Monesko kortti halutaan palauttaa
+     * @return          Palauttaa kortin
+     */
+    public int getKortti(int kortti) {
+        return kortit[kortti];
     }
     
+    /**
+     * Metodi päivittää pöydältä halutun kortin.
+     * @param i         Monesko kortti halutaan päivittää
+     * @return          Palauttaa false, jos päivitys epäonnistuu
+     */
     public boolean updateKortti(int i) {
         int kortti;
         if(i >=0 && i <=2) {

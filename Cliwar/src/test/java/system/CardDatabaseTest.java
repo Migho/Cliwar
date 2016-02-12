@@ -27,7 +27,7 @@ public class CardDatabaseTest {
         for(int j=0; j<cardDatabase.getKorttienMaara(); j++) {
             int[] a = cardDatabase.getCardInfo(j);
             int b=0;
-            for(int i=0; i<14; i++) {
+            for(int i=0; i<13; i++) {
                 b+=a[i];
             }
             assertTrue(b>0);
