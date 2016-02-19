@@ -34,4 +34,9 @@ public class CardDatabaseTest {
         }
     }
     
+    @Test
+    public void korttienMaaraPositiivinen() {
+        assertTrue(cardDatabase.getKorttienMaara() > 0);
+    }
+    
 }

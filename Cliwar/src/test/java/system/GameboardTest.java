@@ -12,10 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author mcrintah
- */
+
 public class GameboardTest {
     Gameboard gameboard;
     
@@ -45,5 +42,10 @@ public class GameboardTest {
     public void OlemattomallePelaajalleEiVoiAktivoidaKorttia() {
         assertFalse(gameboard.activateCard(1, 0));
         assertFalse(gameboard.activateCard(1, 3));
+    }
+    
+    public void PalauttaaFalseJosEnergiaKuluuLopultaLoppuun() {
+        for(int i=0; i<100; i++) gameboard.activateCard(1, 1);
+        assertFalse(gameboard.activateCard(1, 1));
     }
 }

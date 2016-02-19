@@ -11,7 +11,7 @@ import java.util.Scanner;
 /*
  * Korttien asetustiedosto noudattaa seuraavaa kaavaa:
  * 1. rivi: eri korttien määrä
- * Loput rivit: riveittäin tietyn kortin määrä. Toinen rivi vastaa korttia id: 0
+ * Loput rivit: riveittäin tietyn kortin määrä.
  */
 
 public class Deck {
@@ -21,10 +21,10 @@ public class Deck {
     
     public Deck(int i) {
        if(i==1) {
-            if(!DeckConstruct(new File("src/main/java/migho/cliwar/settings/Deck1.txt")))
+            if(!DeckConstruct(new File("src/main/java/settings/Deck1.txt")))
                 throw new Error();
         } else if(i==2) {
-            if(!DeckConstruct(new File("src/main/java/migho/cliwar/settings/Deck2.txt")))
+            if(!DeckConstruct(new File("src/main/java/settings/Deck2.txt")))
                 throw new Error();
         } else {
             throw new Error();

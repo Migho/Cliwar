@@ -69,7 +69,7 @@ public class CardUpdaterTest {
         Thread.sleep(4000);
         int[] kortit2 = table.getKortit();
         assertTrue("Kortit vaihtuivat", Arrays.equals(kortit1, kortit2));
-        table.stopActivity();
+        table.stopActivity(); 
         Thread.sleep(200);
     }
     

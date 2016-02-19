@@ -24,7 +24,7 @@ public class CardDatabase {
     private int korttienMaara=0;
     
     public CardDatabase() {
-        if(!CardDatabaseConstruct(new File("src/main/java/migho/cliwar/settings/CardDatabase.txt")))
+        if(!CardDatabaseConstruct(new File("src/main/java/settings/CardDatabase.txt")))
             throw new Error();
     }
     

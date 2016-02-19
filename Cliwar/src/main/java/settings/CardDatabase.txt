@@ -1,0 +1,5 @@
+card_id cost    ph.d.e  ph.d.s  mg.d.e  mg.d.s  pured.e pured.s armor.e armor.s mgres.e mgres.s eng/m.e eng/m.s
+3
+0       2       3       0       0       0       0       0       0       0       0       0       0       0       Physical damage -kortti
+1       3       0       0       3       0       0       0       0       0       0       0       0       0       Magic damage -kortti
+2       1       0       0       0       0       4       4       0       0       0       0       0       0       Vahingoita molempia

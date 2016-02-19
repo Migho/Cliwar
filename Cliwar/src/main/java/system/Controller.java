@@ -28,13 +28,8 @@ public class Controller {
         } return false;
     }
     
-    /**
-     * GUI:ta varten tarpeellisten tietojen keräys.
-     * @return Palauttaa kaksiulotteisen taulukon sisältäen pelilaudan eri arvot.
-     */
-    public int[][] getAllInfo() {
-        int[][] a = {table.getKortit(), gameBoard.getPlayerInfo(1), gameBoard.getPlayerInfo(2), buttonController.getKadet()};
-        return a;
+    public Table getTable() {
+        return table;
     }
     
 }
