@@ -18,7 +18,7 @@ public class KeyboardListener implements KeyListener {
         if('a' == e.getKeyChar()) buttonController.siirraKattaVasemmalle(1);
         if('s' == e.getKeyChar()) buttonController.otaKortti(1);
         if('d' == e.getKeyChar()) buttonController.siirraKattaOikealle(1);
-        
+
         if('b' == e.getKeyChar()) buttonController.siirraKattaVasemmalle(2);
         if('n' == e.getKeyChar()) buttonController.otaKortti(2);
         if('m' == e.getKeyChar()) buttonController.siirraKattaOikealle(2);

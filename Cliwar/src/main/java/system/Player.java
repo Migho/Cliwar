@@ -8,7 +8,7 @@ public class Player {
         hp=25;
         armor=1;
         mResistance=0;
-        energy=0;
+        energy=20;
         maxEnergy=20;
     }
     

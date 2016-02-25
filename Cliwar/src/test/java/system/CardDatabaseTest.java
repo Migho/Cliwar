@@ -28,7 +28,7 @@ public class CardDatabaseTest {
             int[] a = cardDatabase.getCardInfo(j);
             int b=0;
             for(int i=0; i<13; i++) {
-                b+=a[i];
+                b+=Math.abs(a[i]);
             }
             assertTrue(b>0);
         }

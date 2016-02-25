@@ -55,11 +55,15 @@ public class ButtonController {
     }
     
     /**
-     * @return          Palauttaa virtuaalisten käsien nykyiset paikat
+     * @return          Palauttaa virtuaalikäsien paikat, 0=player1, 1=player2
      */
     public int[] getKadet() {
         int[] a = {hand1, hand2};
         return a;
+    }
+    
+    public KeyboardListener getKeyboardListener() {
+        return keyboardListener;
     }
     
 }

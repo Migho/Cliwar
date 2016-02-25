@@ -6,10 +6,16 @@ package system;
 public class Gameboard {
     private final Player player1, player2;
     private final CardDatabase cardDatabase = new CardDatabase();
+    private final EnergyUpdater energyUpdater;
     
     public Gameboard() {
         player1 = new Player();
         player2 = new Player();
+        energyUpdater = new EnergyUpdater(player1, player2);
+    }
+    
+    public void startActivity() {
+        energyUpdater.start();
     }
     
     /**
@@ -48,6 +54,17 @@ public class Gameboard {
     }
     
     /**
+     * Palauttaa halutun pelaajan.
+     * @param player    1=pelaaja1, 2=pelaaja2
+     * @return          palauttaa valitun pelaajan.
+     */
+    public Player getPlayer(int player) {
+        if(player==1) return player1;
+        if(player==2) return player2;
+        else return null;
+    }
+    
+    /**
      * Palauttaa halutun pelaajan statistiikat.
      * @param player    1=pelaaja1, 2=pelaaja2
      * @return          palauttaa valitun pelaajan statistiikat taulussa.
@@ -57,5 +74,4 @@ public class Gameboard {
         if(player==2) return player2.getStats();
         return null;
     }
-    
 }

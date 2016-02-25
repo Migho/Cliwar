@@ -47,11 +47,11 @@ public class PlayerTest {
         player.changeMagicResistance(-1);
         assertTrue(i>player.getStats()[2]);
         i=player.getStats()[3];
-        assertTrue(player.changeEnergy(1));
-        assertTrue(i<player.getStats()[3]);
-        i=player.getStats()[3];
         assertTrue(player.changeEnergy(-1));
         assertTrue(i>player.getStats()[3]);
+        i=player.getStats()[3];
+        assertTrue(player.changeEnergy(1));
+        assertTrue(i<player.getStats()[3]);
     }
     
     @Test

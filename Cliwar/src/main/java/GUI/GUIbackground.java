@@ -12,7 +12,7 @@ public class GUIbackground extends JPanel {
     
     public GUIbackground() {
         try {
-            image = ImageIO.read(new File("src/main/java/graphics/Background2.jpg"));
+            image = ImageIO.read(new File("src/main/java/graphics/Background.jpg"));
         } catch (IOException ex) {
             System.out.println("Ei voitu latada taustaa!");
         }

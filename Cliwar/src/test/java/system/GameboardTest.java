@@ -31,11 +31,11 @@ public class GameboardTest {
     
     @Test
     public void KortinAktivointiToimii() {
-        int[] a = gameboard.getPlayerInfo(1);
-        int[] b = gameboard.getPlayerInfo(2);
+        int[] a = gameboard.getPlayer(1).getStats();
+        int[] b = gameboard.getPlayer(2).getStats();
         int i=1;
-        while(!gameboard.activateCard(i, 1)) i++;
-        assertTrue(!gameboard.getPlayerInfo(1).equals(a) || !gameboard.getPlayerInfo(2).equals(b));
+        while(!gameboard.activateCard(i, 1) && i < 3) i++;
+        assertTrue(!gameboard.getPlayer(1).getStats().equals(a) || !gameboard.getPlayer(2).getStats().equals(b));
     }
     
     @Test

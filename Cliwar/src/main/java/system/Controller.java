@@ -4,15 +4,16 @@ package system;
  * Luokka on koko sovelluslogiikan pääydin, joka yhdistää sen eri osat toisiinsa.
  */
 public class Controller {
-    private Gameboard gameBoard;
+    private Gameboard gameboard;
     private Table table;
     private ButtonController buttonController;
     
     public Controller() {
-        gameBoard = new Gameboard();
+        gameboard = new Gameboard();
         table = new Table();
         buttonController = new ButtonController(this);
         table.startActivity();
+        gameboard.startActivity();
     }
     
     /**
@@ -22,7 +23,7 @@ public class Controller {
      * @return          Palauttaa false jos korttia ei voitu pelata.
      */
     public boolean nostaKortti(int kortti, int pelaaja) {
-        if(gameBoard.activateCard(table.getKortti(kortti), pelaaja)) {
+        if(gameboard.activateCard(table.getKortti(kortti), pelaaja)) {
             table.updateKortti(kortti);
             return true;
         } return false;
@@ -32,4 +33,11 @@ public class Controller {
         return table;
     }
     
+    public ButtonController getButtonController() {
+        return buttonController;
+    }
+    
+    public Gameboard getGameboard() {
+        return gameboard;
+    }
 }

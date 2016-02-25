@@ -25,6 +25,7 @@ public class GUIstarter {
         f.setSize(1024, 720);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setTitle("Cliwar");
+        f.addKeyListener(controller.getButtonController().getKeyboardListener());
     }
     
 }
