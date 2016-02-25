@@ -9,11 +9,11 @@ import javax.swing.JPanel;
 import system.ButtonController;
 import system.Table;
 
-public class GUIhands extends JPanel {
+public class Ghands extends JPanel {
     private BufferedImage hand1, hand2;
     private ButtonController buttonController;
     
-    public GUIhands(ButtonController buttonController) {
+    public Ghands(ButtonController buttonController) {
         this.buttonController = buttonController;
         try {
             hand1 = ImageIO.read(new File("src/main/java/graphics/Hand1.jpg"));

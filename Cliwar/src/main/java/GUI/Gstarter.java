@@ -12,14 +12,14 @@ import system.Controller;
  *
  * @author mcrintah
  */
-public class GUIstarter {
+public class Gstarter {
     
     JFrame f;
-    GUIcontroller guicontroller;
+    Gcontroller guicontroller;
     
-    public GUIstarter(Controller controller) {
+    public Gstarter(Controller controller) {
         f = new JFrame();
-        guicontroller = new GUIcontroller(controller);
+        guicontroller = new Gcontroller(controller);
         f.add(guicontroller);
         f.setVisible(true);
         f.setSize(1024, 720);

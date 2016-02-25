@@ -5,15 +5,15 @@
  */
 package system;
 
-import GUI.GUIcontroller;
-import GUI.GUIstarter;
+import GUI.Gcontroller;
+import GUI.Gstarter;
 import java.awt.EventQueue;
 
 
 public class Launcher {
     public static void main(String[] args) {
         Controller controller = new Controller();
-        GUIstarter guistarter = new GUIstarter(controller);
+        Gstarter guistarter = new Gstarter(controller);
         
     }
 }

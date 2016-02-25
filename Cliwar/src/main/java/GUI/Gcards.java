@@ -15,12 +15,12 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import system.Table;
 
-public class GUIcards extends JPanel {
+public class Gcards extends JPanel {
     private BufferedImage[] korttikuvat;
     private int korttienMaara=3;
     private Table table;
     
-    public GUIcards(Table table) {
+    public Gcards(Table table) {
         this.table = table;
         korttikuvat = new BufferedImage[korttienMaara];
         for(int i=0; i<korttienMaara; i++) {

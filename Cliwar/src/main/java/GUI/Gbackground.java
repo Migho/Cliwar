@@ -7,10 +7,10 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-public class GUIbackground extends JPanel {
+public class Gbackground extends JPanel {
     private BufferedImage image;
     
-    public GUIbackground() {
+    public Gbackground() {
         try {
             image = ImageIO.read(new File("src/main/java/graphics/Background.jpg"));
         } catch (IOException ex) {

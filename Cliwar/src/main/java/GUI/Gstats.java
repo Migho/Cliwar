@@ -5,11 +5,11 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 import system.Player;
 
-public class GUIstats extends JPanel {
+public class Gstats extends JPanel {
     
     private Player player1, player2;
     
-    public GUIstats(Player player1, Player player2) {
+    public Gstats(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }

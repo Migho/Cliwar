@@ -14,21 +14,21 @@ import javax.swing.Timer;
 import javax.swing.WindowConstants;
 import system.Controller;
 
-public class GUIcontroller extends JPanel implements ActionListener {
+public class Gcontroller extends JPanel implements ActionListener {
     
     private JFrame frame;
     private Timer t = new Timer(20, this);
-    private GUIbackground background = new GUIbackground();
-    private GUIcards cards;
-    private GUIhands hands;
-    private GUIstats stats;
+    private Gbackground background = new Gbackground();
+    private Gcards cards;
+    private Ghands hands;
+    private Gstats stats;
     //private Controller controller;
     
-    public GUIcontroller(Controller controller) {
+    public Gcontroller(Controller controller) {
         //this.controller = controller;
-        cards = new GUIcards(controller.getTable());
-        hands = new GUIhands(controller.getButtonController());
-        stats = new GUIstats(controller.getGameboard().getPlayer(1), controller.getGameboard().getPlayer(2));
+        cards = new Gcards(controller.getTable());
+        hands = new Ghands(controller.getButtonController());
+        stats = new Gstats(controller.getGameboard().getPlayer(1), controller.getGameboard().getPlayer(2));
     }
     
     @Override
