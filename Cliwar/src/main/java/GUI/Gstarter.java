@@ -24,7 +24,7 @@ public class Gstarter {
         f.setVisible(true);
         f.setSize(1024, 720);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setTitle("Cliwar");
+        f.setTitle("Hi mom");
         f.addKeyListener(controller.getButtonController().getKeyboardListener());
     }
     
