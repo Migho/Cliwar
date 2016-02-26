@@ -22,6 +22,7 @@ public class Gcontroller extends JPanel implements ActionListener {
     private Gcards cards;
     private Ghands hands;
     private Gstats stats;
+    private Gplayers players;
     //private Controller controller;
     
     public Gcontroller(Controller controller) {
@@ -29,6 +30,7 @@ public class Gcontroller extends JPanel implements ActionListener {
         cards = new Gcards(controller.getTable());
         hands = new Ghands(controller.getButtonController());
         stats = new Gstats(controller.getGameboard().getPlayer(1), controller.getGameboard().getPlayer(2));
+        players = new Gplayers();
     }
     
     @Override
@@ -38,6 +40,7 @@ public class Gcontroller extends JPanel implements ActionListener {
         hands.paintComponent(g);
         cards.paintComponent(g);
         stats.paintComponent(g);
+        players.paintComponent(g);
         t.start();
     }
     
