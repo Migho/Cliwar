@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 public class Gplayers extends JPanel {
     private BufferedImage player1, player1x, player2, player2x;
+    long time=0, player1eyes=20, player2eyes=20;
     public Gplayers() {
         try {
             player1 = ImageIO.read(new File("src/main/java/graphics/Player1.png"));
@@ -22,8 +23,17 @@ public class Gplayers extends JPanel {
     
     @Override
     protected void paintComponent(Graphics g) {
+        time++;
         super.paintComponent(g);
-        g.drawImage(player1, 0, 80, null);
-        g.drawImage(player2, 612, 80, null);
+        if(time < player1eyes) g.drawImage(player1, 0, 80, null);
+        else {
+            g.drawImage(player1x, 0, 80, null);
+            player1eyes=time+20;
+        }
+        if(time < player2eyes) g.drawImage(player2, 612, 80, null);
+        else {
+            g.drawImage(player2x, 612, 80, null);
+            player2eyes=time+30;
+        }
     }
 }
