@@ -1,21 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package GUI;
+package gui;
 
 import javax.swing.JFrame;
 import system.Controller;
 
-/**
- *
- * @author mcrintah
- */
+
+
 public class Gstarter {
-    
+
     JFrame f;
     Gcontroller guicontroller;
+
+    /**
+     * Tämä luokka luo ikkunan ja käynnistää GUI-controllerin toiminnan.
+     * @param controller  Controller-olio, jonka avulla pelin kannalta oleelliset
+     * tiedot saadaan noudettua.
+     */
     
     public Gstarter(Controller controller) {
         f = new JFrame();
@@ -27,5 +26,5 @@ public class Gstarter {
         f.setTitle("Hi mom");
         f.addKeyListener(controller.getButtonController().getKeyboardListener());
     }
-    
+
 }

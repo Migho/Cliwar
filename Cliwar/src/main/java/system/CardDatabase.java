@@ -3,10 +3,6 @@ package system;
 import java.io.File;
 import java.util.Scanner;
 
-/**
- * Luokka lataa asetustiedostosta eri korttien ominaisuudet ja pitää niistä kirjaa.
- */
-
 /* 
  * Korttien asetustiedosto noudattaa seuraavaa kaavaa:
  * 1. rivi skipataan
@@ -15,25 +11,43 @@ import java.util.Scanner;
  *  m-dmg_self, pure-dmg_emeny, pure-dmg_self, armor-mod_emeny, armor-mod_self,
  *  mResistance-mod_emeny, mResistance-mod_self, energy/s_emeny, energy/s_self.
  * Eli yhteensä ID + 13 eri lukua/rivi välilyönnein eriteltynä
-*/
-
+ */
 public class CardDatabase {
-    
+
     private int[][] kortit;
-    final private int asetustenMaara=13;
-    private int korttienMaara=0;
+    final private int asetustenMaara = 13;
+    private int korttienMaara = 0;
+
+    /**
+     * Tämän luokan tehtävä on latada asetustiedostosta eri korttien efektit ja
+     * palauttaa niitä.
+     */
     
     public CardDatabase() {
-        if(!CardDatabaseConstruct(new File("src/main/java/settings/CardDatabase.txt")))
+        if (!cardDatabaseConstruct(new File("src/main/java/settings/CardDatabase.txt"))) {
             throw new Error();
+        }
     }
+
+    /**
+     * Tämän luokan tehtävä on latada asetustiedostosta eri korttien efektit ja
+     * palauttaa niitä.
+     * @param tiedosto  Asetustiedosto joka halutaan ladata.
+     */
     
     public CardDatabase(File tiedosto) {
-        if(!CardDatabaseConstruct(tiedosto))
+        if (!cardDatabaseConstruct(tiedosto)) {
             throw new Error();
+        }
     }
+
+    /**
+     * Metodi lataa parametrina annetun tiedoston sisällön.
+     * @param tiedosto  Tiedosto joka halutaan ladata
+     * @return          Palauttaa false, mikäli epäonnistuu
+     */
     
-    private boolean CardDatabaseConstruct(File tiedosto)  {
+    private boolean cardDatabaseConstruct(File tiedosto) {
         String rivi;
         Scanner lukija = null;
         try {
@@ -42,8 +56,8 @@ public class CardDatabase {
             System.out.println("Tiedoston lukeminen epäonnistui. Virhe: " + e.getMessage());
             return false;
         }
-        
-        if(!lukija.hasNextLine()) {
+
+        if (!lukija.hasNextLine()) {
             System.out.println("Tiedosto on tyhjä!");
             return false;
         }
@@ -53,7 +67,7 @@ public class CardDatabase {
         int i;
         while (lukija.hasNextLine()) {
             i = lukija.nextInt();
-            for(int j=0; j<asetustenMaara; j++) {
+            for (int j = 0; j < asetustenMaara; j++) {
                 kortit[i][j] = lukija.nextInt();
             }
             lukija.nextLine();
@@ -61,13 +75,18 @@ public class CardDatabase {
         //System.out.println("Tiedoston luku onnistui");
         return true;
     }
-    
+
+    /**
+     * Palauttaa halutun kortin tiedot.
+     * @param cardId    Sen kortin ID, jonka speksit halutaan.
+     * @return          Palauttaa kortin tiedot int[] -taulukkona
+     */
     public int[] getCardInfo(int cardId) {
         return kortit[cardId];
     }
-    
+
     public int getKorttienMaara() {
         return korttienMaara;
     }
-    
+
 }

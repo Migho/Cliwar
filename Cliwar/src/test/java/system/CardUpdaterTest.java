@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 */
 
 public class CardUpdaterTest {
-    /*
+    
     Table table;
     
     @Before
@@ -72,5 +72,5 @@ public class CardUpdaterTest {
         table.stopActivity(); 
         Thread.sleep(200);
     }
-    */
+    
 }

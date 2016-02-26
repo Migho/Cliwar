@@ -4,39 +4,55 @@ import java.io.File;
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- * Luokka pitää kirjaa korttipinosta ja palauttaa 
- */
-
 /*
  * Korttien asetustiedosto noudattaa seuraavaa kaavaa:
  * 1. rivi: eri korttien määrä
  * Loput rivit: riveittäin tietyn kortin määrä.
  */
-
 public class Deck {
-    private int korttienmaara=0;
+
+    private int korttienmaara = 0;
     private int kortit[];
     private Random random = new Random();
+
+    /**
+     * Luokka pitää kirjaa korttipinosta ja antaa kortteja pinosta.
+     * @param i     Pelaaja jonka korttipino halutaan ladata;
+     * 1=pelaaja1, 2=pelaaja2
+     */
     
     public Deck(int i) {
-       if(i==1) {
-            if(!DeckConstruct(new File("src/main/java/settings/Deck1.txt")))
+        if (i == 1) {
+            if (!deckConstruct(new File("src/main/java/settings/Deck1.txt"))) {
                 throw new Error();
-        } else if(i==2) {
-            if(!DeckConstruct(new File("src/main/java/settings/Deck2.txt")))
+            }
+        } else if (i == 2) {
+            if (!deckConstruct(new File("src/main/java/settings/Deck2.txt"))) {
                 throw new Error();
+            }
         } else {
             throw new Error();
         }
     }
     
+    /**
+     * Luokka pitää kirjaa korttipinosta ja antaa kortteja pinosta.
+     * @param tiedosto      Tiedosto, jossa on asetukset pakalle.
+     */
+    
     public Deck(File tiedosto) {
-        if(!DeckConstruct(tiedosto))
+        if (!deckConstruct(tiedosto)) {
             throw new Error();
+        }
     }
     
-    private boolean DeckConstruct(File tiedosto) {
+    /**
+     * Metodi, joka lataa halutun tiedoston ja lataa asetukset.
+     * @param tiedosto      Tiedosto jota käsitellään
+     * @return 
+     */
+    
+    private boolean deckConstruct(File tiedosto) {
         String rivi;
         Scanner lukija = null;
         try {
@@ -45,28 +61,35 @@ public class Deck {
             System.out.println("Tiedoston lukeminen epäonnistui. Virhe: " + e.getMessage());
             return false;
         }
-        
-        if(!lukija.hasNextLine()) {
+
+        if (!lukija.hasNextLine()) {
             System.out.println("Tiedosto on tyhjä!");
             return false;
         }
         kortit = new int[Integer.parseInt(lukija.nextLine())];
-        int i=0;
+        int i = 0;
         while (lukija.hasNextLine()) {
             kortit[i] = Integer.parseInt(lukija.nextLine());
-            korttienmaara+=kortit[i];
+            korttienmaara += kortit[i];
             i++;
         }
         //System.out.println("Tiedoston luku onnistui");
         return true;
     }
+
+    /**
+     * Anna pakasta seuraava kortti.
+     * @return  Palauttaa pakasta kortin.
+     */
     
     public int annaKortti() {
-        if(korttienmaara == 0) return -1;
+        if (korttienmaara == 0) {
+            return -1;
+        }
         int j;
         int i = random.nextInt(korttienmaara);
-        for(j=0; i>=0; j++) {
-            i-=kortit[j];
+        for (j = 0; i >= 0; j++) {
+            i -= kortit[j];
         }
         j--;
         kortit[j]--;
@@ -74,9 +97,13 @@ public class Deck {
         return j;
     }
     
+    /**
+     * Lisää pakkaan kortti.
+     * @param i     Kortin ID joka lisätään.
+     */
     public void lisaaKortti(int i) {
         kortit[i]++;
         korttienmaara++;
     }
-    
+
 }

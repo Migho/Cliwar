@@ -14,4 +14,8 @@ Esimerkkejä korteista: lisää itselle lisää HP:ta, lisää itselle magic- ta
 - Siirrä kortinvalitsinta
   - Pelaaja voi siirtää valitsintaan milloin tahansa. Tällöin valitsin siirtyy pelaajan näppäilyjen mukaan joko vasemmalle tai oikealle.
 
-![Alt text](luokkakaavio.jpg)
+![Alt text](Luokkakaavio.jpg)
+Sekvenssikaavio, joka kuvaa ohjelman (logiikkapuolen) käynnistymistä:
+![Alt text](Sekvenssikaavio-aloitus.jpg)
+Sekvenssikaavio, joka kuvaa sitä, kun pelaaja siirtää valitsinta ja aktivoi kortin:
+![Alt text](Sekvenssikaavio-kortinValinta.jpg)
