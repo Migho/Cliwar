@@ -24,7 +24,8 @@ public class CardDatabase {
      */
     
     public CardDatabase() {
-        if (!cardDatabaseConstruct(new File("src/main/java/settings/CardDatabase.txt"))) {
+        ClassLoader classLoader = getClass().getClassLoader();
+        if (!cardDatabaseConstruct(new File(classLoader.getResource("settings/CardDatabase.txt").getFile()))) {
             throw new Error();
         }
     }

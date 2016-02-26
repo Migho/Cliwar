@@ -16,7 +16,7 @@ public class Gameboard {
     }
     
     /**
-     * Aloita korttien vaihtaminen.
+     * Aloita energian automaattinen regeneroituminen.
      */
     public void startActivity() {
         energyUpdater.start();

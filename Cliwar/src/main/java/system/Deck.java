@@ -22,12 +22,13 @@ public class Deck {
      */
     
     public Deck(int i) {
+        ClassLoader classLoader = getClass().getClassLoader();
         if (i == 1) {
-            if (!deckConstruct(new File("src/main/java/settings/Deck1.txt"))) {
+            if (!deckConstruct(new File(classLoader.getResource("settings/Deck1.txt").getFile()))) {
                 throw new Error();
             }
         } else if (i == 2) {
-            if (!deckConstruct(new File("src/main/java/settings/Deck2.txt"))) {
+            if (!deckConstruct(new File(classLoader.getResource("settings/Deck2.txt").getFile()))) {
                 throw new Error();
             }
         } else {

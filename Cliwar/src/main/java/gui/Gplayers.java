@@ -18,10 +18,10 @@ public class Gplayers extends JPanel {
     
     public Gplayers() {
         try {
-            player1 = ImageIO.read(new File("src/main/java/graphics/Player1.png"));
-            player1x = ImageIO.read(new File("src/main/java/graphics/Player1x.png"));
-            player2 = ImageIO.read(new File("src/main/java/graphics/Player2.png"));
-            player2x = ImageIO.read(new File("src/main/java/graphics/Player2x.png"));
+            player1 = ImageIO.read(new File("src/main/resources/graphics/Player1.png"));
+            player1x = ImageIO.read(new File("src/main/resources/graphics/Player1x.png"));
+            player2 = ImageIO.read(new File("src/main/resources/graphics/Player2.png"));
+            player2x = ImageIO.read(new File("src/main/resources/graphics/Player2x.png"));
         } catch (IOException ex) {
             System.out.println("Ei voitu latada taustaa!");
         }

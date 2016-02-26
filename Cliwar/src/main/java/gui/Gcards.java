@@ -25,7 +25,7 @@ public class Gcards extends JPanel {
         korttikuvat = new BufferedImage[korttienMaara];
         for (int i = 0; i < korttienMaara; i++) {
             try {
-                korttikuvat[i] = ImageIO.read(new File("src/main/java/graphics/" + i + ".jpg"));
+                korttikuvat[i] = ImageIO.read(new File("src/main/resources/graphics/" + i + ".jpg"));
             } catch (IOException ex) {
                 System.out.println("Virhe lukiessa kortille " + i + " grafiikkaa!");
             }
