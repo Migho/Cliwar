@@ -7,12 +7,11 @@ public class Controller {
     private ButtonController buttonController;
 
     /**
-    * Luokka on koko sovelluslogiikan pääydin, joka yhdistää sen eri osat
-    * toisiinsa.
-    */
-    
+     * Luokka on koko sovelluslogiikan pääydin, joka yhdistää sen eri osat
+     * toisiinsa.
+     */
     public Controller() {
-        gameboard = new Gameboard();
+        gameboard = new Gameboard(this);
         table = new Table();
         buttonController = new ButtonController(this);
         table.startActivity();
@@ -45,4 +44,32 @@ public class Controller {
     public Gameboard getGameboard() {
         return gameboard;
     }
+
+    /**
+     * Metodi palauttaa pelin tilanteen, aka onko peli jo päättynyt.
+     * @return  Palauttaa tilanteen. 0=peli on käynnissä, 1=pelaaja 1 voitti,
+     * 2=pelaaja 2 voitti, 3=peli päättyi tasapeliin
+     */
+    public int getPelinTilanne() {
+        if (gameboard.getPlayerInfo(1)[0] <= 0 && gameboard.getPlayerInfo(2)[0] <= 0) {
+            return 3;
+        }
+        if (gameboard.getPlayerInfo(2)[0] <= 0) {
+            return 1;
+        }
+        if (gameboard.getPlayerInfo(1)[0] <= 0) {
+            return 2;
+        }
+        return 0;
+    }
+
+    /**
+     * Metodi lopettaa pelin kulun.
+     */
+    public void lopetaPeli() {
+        table.stopActivity();
+        buttonController.stopListening();
+
+    }
+
 }

@@ -9,7 +9,7 @@ public class Player {
      * Luokka pitää kirjaa pelaajan statistiikasta.
      */
     public Player() {
-        hp = 25;
+        hp = 30;
         armor = 1;
         mResistance = 0;
         energy = 10;
@@ -21,8 +21,9 @@ public class Player {
      *
      * @param damageType    1=physical, 2=magical, 3=pure
      * @param damage        Aiheutettavan vahingon määrä
+     * @return palauttaa true jos pelaaja kuolee vammoihin
      */
-    public void dealDamage(int damageType, int damage) {
+    public boolean dealDamage(int damageType, int damage) {
         if (damageType == 1) {
             if (armor < damage) {
                 hp -= damage - armor;
@@ -37,13 +38,14 @@ public class Player {
             hp -= damage;
         }
         if (hp <= 0) {
-            killPlayer();
+            return true;
         }
+        return false;
     }
 
     /**
-     * Lisää HP-arvoa. Voi teoriassa myös vähentää: käytä silloin dealDamage
-     * -metodia pure-damagella.
+     * Lisää HP-arvoa (tai vähentää, mutta vahingon tekemiseen on tarkoitus
+     * käyttää dealDamage -metodia).
      *
      * @param i Halutun muutoksen määrä
      */
@@ -89,13 +91,6 @@ public class Player {
             energy = maxEnergy;
         }
         return true;
-    }
-
-    /**
-     * Tappaa pelaajan.
-     */
-    private void killPlayer() {
-        //kehitetään myöhemmin
     }
 
     /**

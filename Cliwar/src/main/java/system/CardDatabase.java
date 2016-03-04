@@ -1,7 +1,12 @@
 package system;
 
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /* 
  * Korttien asetustiedosto noudattaa seuraavaa kaavaa:
@@ -9,7 +14,7 @@ import java.util.Scanner;
  * 2. rivi: eri korttien määrä
  * loput rivit: card_id, energy_cost, p-dmg_emeny, p-dmg_self, m-dmg_emeny,
  *  m-dmg_self, pure-dmg_emeny, pure-dmg_self, armor-mod_emeny, armor-mod_self,
- *  mResistance-mod_emeny, mResistance-mod_self, energy/s_emeny, energy/s_self.
+ *  mResistance-mod_emeny, mResistance-mod_self, energy%_emeny, energy%_self.
  * Eli yhteensä ID + 13 eri lukua/rivi välilyönnein eriteltynä
  */
 public class CardDatabase {
@@ -22,65 +27,56 @@ public class CardDatabase {
      * Tämän luokan tehtävä on latada asetustiedostosta eri korttien efektit ja
      * palauttaa niitä.
      */
-    
     public CardDatabase() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        if (!cardDatabaseConstruct(new File(classLoader.getResource("settings/CardDatabase.txt").getFile()))) {
-            throw new Error();
-        }
-    }
-
-    /**
-     * Tämän luokan tehtävä on latada asetustiedostosta eri korttien efektit ja
-     * palauttaa niitä.
-     * @param tiedosto  Asetustiedosto joka halutaan ladata.
-     */
-    
-    public CardDatabase(File tiedosto) {
-        if (!cardDatabaseConstruct(tiedosto)) {
+        InputStream in = getClass().getResourceAsStream("/settings/CardDatabase.txt");
+        if (!cardDatabaseConstruct(in)) {
             throw new Error();
         }
     }
 
     /**
      * Metodi lataa parametrina annetun tiedoston sisällön.
-     * @param tiedosto  Tiedosto joka halutaan ladata
-     * @return          Palauttaa false, mikäli epäonnistuu
+     *
+     * @param tiedosto Tiedosto joka halutaan ladata
+     * @return Palauttaa false, mikäli epäonnistuu
      */
-    
-    private boolean cardDatabaseConstruct(File tiedosto) {
-        String rivi;
-        Scanner lukija = null;
+    private boolean cardDatabaseConstruct(InputStream in) {
+        BufferedReader input = null;
+        Scanner lukija;
         try {
-            lukija = new Scanner(tiedosto);
-        } catch (Exception e) {
-            System.out.println("Tiedoston lukeminen epäonnistui. Virhe: " + e.getMessage());
-            return false;
-        }
-
-        if (!lukija.hasNextLine()) {
-            System.out.println("Tiedosto on tyhjä!");
-            return false;
-        }
-        lukija.nextLine();
-        korttienMaara = Integer.parseInt(lukija.nextLine());
-        kortit = new int[korttienMaara][asetustenMaara];
-        int i;
-        while (lukija.hasNextLine()) {
-            i = lukija.nextInt();
-            for (int j = 0; j < asetustenMaara; j++) {
-                kortit[i][j] = lukija.nextInt();
+            input = new BufferedReader(new InputStreamReader(in));
+            int i;
+            input.readLine();
+            korttienMaara = Integer.parseInt(input.readLine());
+            kortit = new int[korttienMaara][asetustenMaara];
+            String rivi;
+            while ((rivi = input.readLine()) != null) {
+                lukija = new Scanner(rivi);
+                i = lukija.nextInt();
+                for (int j = 0; j < asetustenMaara; j++) {
+                    kortit[i][j] = lukija.nextInt();
+                }
             }
-            lukija.nextLine();
+        } catch (IOException | NumberFormatException e) {
+            return false;
+        } finally {
+            if (input != null) {
+                try {
+                    input.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(CardDatabase.class.getName()).log(Level.SEVERE, null, ex);
+                    return false;
+                }
+            }
         }
-        //System.out.println("Tiedoston luku onnistui");
         return true;
     }
 
     /**
      * Palauttaa halutun kortin tiedot.
-     * @param cardId    Sen kortin ID, jonka speksit halutaan.
-     * @return          Palauttaa kortin tiedot int[] -taulukkona
+     *
+     * @param cardId Sen kortin ID, jonka speksit halutaan.
+     * @return Palauttaa kortin tiedot int[] -taulukkona
      */
     public int[] getCardInfo(int cardId) {
         return kortit[cardId];

@@ -14,4 +14,8 @@
 
 **18.2.2016** 2h, testien tekemistä
 
-**19.2.2016** 9h, testien tekemistä, GUI:n kanssa täydellistä takkuamista, muuta kivaa ihmettelyä, kuten sitä miksi checkstyle valittaa {} -sulkujen puutteesta yhden rivin if- tai elselauseissa; eikö tämä ole täysin mielipidekysymys? Omasta mielestäni koodista tulee huomattavasti selkeämpää kun (todella) lyhyistä if-lauseista jätetään nuo sulut pois. Ainakin jos rivinvaihdot jätetään pois. Myös =, <=, > jne merkkien kanssa oli eriäviä mielipiteitä, lyhyissä lauseissa jättäisin välilyönnit ehtojen ympärille lyömättä aina; ottaisin ne mukaan vain jos ehtolause on pitempi kuin luokkaa if(asd==qwerty). Tämän periaatteen tosin huomaa myös checkstyle-raportista, kun virheitä on kuulemma yli 300. Kaipaisin tähän kurssiarvostelijan mielipidettä, onko nämä pakko toteuttaa "kaavan mukaan"? Jos oikeasti on niin voin suorittaa netbeansin automaattikorjauksen ensi kertaa varten, ja toivoisin ettei nämä mainitsemani asiat tiputa tämänviikkoista pistemäärääni. Sen automaattikorjauksen suorittamisessahan ei mene kuin parikymmentä sekunttia.
+**19.2.2016** 9h, testien tekemistä, GUI:n kanssa täydellistä takkuamista, muuta kivaa ihmettelyä.
+
+**25.9.2016** 5h graafisen käyttöliittymän toteutusta
+
+**26.9.2016** 6h deadline6 asioiden toteutusta ja viimeistelyä.

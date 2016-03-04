@@ -5,16 +5,20 @@ public class Gameboard {
     private final Player player1, player2;
     private final CardDatabase cardDatabase = new CardDatabase();
     private final EnergyUpdater energyUpdater;
+    private final Controller controller;
 
     /**
      * Luokka huolehtii korttien aktivoinnista aiheutuvista muutoksista.
+     *
+     * @param controller Kontrolleri, jolle luokka viestii pelin päättymisen
      */
-    public Gameboard() {
+    public Gameboard(Controller controller) {
+        this.controller = controller;
         player1 = new Player();
         player2 = new Player();
         energyUpdater = new EnergyUpdater(player1, player2);
     }
-    
+
     /**
      * Aloita energian automaattinen regeneroituminen.
      */
@@ -44,29 +48,26 @@ public class Gameboard {
         if (!pelaaja.changeEnergy(info[0])) {
             return false;
         }
-        if (info[1] > 0) {
-            vihu.dealDamage(1, info[1]);
+
+        for (int i = 2; i <= 6; i = i + 2) {
+            if (info[i - 1] != 0) {
+                if (vihu.dealDamage(i / 2, info[i - 1])) {
+                    lopetaPeli();
+                }
+            }
+            if (info[i] != 0) {
+                if (pelaaja.dealDamage(i / 2, info[i])) {
+                    lopetaPeli();
+                }
+            }
         }
-        if (info[2] > 0) {
-            pelaaja.dealDamage(1, info[2]);
-        }
-        if (info[3] > 0) {
-            vihu.dealDamage(2, info[3]);
-        }
-        if (info[4] > 0) {
-            pelaaja.dealDamage(2, info[4]);
-        }
-        if (info[5] > 0) {
-            vihu.dealDamage(3, info[5]);
-        }
-        if (info[6] > 0) {
-            pelaaja.dealDamage(3, info[6]);
-        }
+
         vihu.changeArmor(info[7]);
         pelaaja.changeArmor(info[8]);
         vihu.changeMagicResistance(info[9]);
         pelaaja.changeMagicResistance(info[10]);
-        //puuttuu vielä energy/s!!!1
+        energyUpdater.muutaEnergianTuotantoa(vihu, info[11]);
+        energyUpdater.muutaEnergianTuotantoa(pelaaja, info[12]);
 
         return true;
     }
@@ -102,5 +103,10 @@ public class Gameboard {
             return player2.getStats();
         }
         return null;
+    }
+
+    private void lopetaPeli() {
+        energyUpdater.stopRunning();
+        controller.lopetaPeli();
     }
 }

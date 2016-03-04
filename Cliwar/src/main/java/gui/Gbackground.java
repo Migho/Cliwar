@@ -17,9 +17,9 @@ public class Gbackground extends JPanel {
     
     public Gbackground() {
         try {
-            image = ImageIO.read(new File("src/main/resources/graphics/Background.jpg"));
+            image = ImageIO.read(getClass().getResourceAsStream("/graphics/Background.jpg"));
         } catch (IOException ex) {
-            System.out.println("Ei voitu latada taustaa!");
+            System.out.println("Virhe: ei voitu latada taustaa!");
         }
     }
 

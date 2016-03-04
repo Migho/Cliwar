@@ -17,6 +17,7 @@ public class Gcontroller extends JPanel implements ActionListener {
     private Ghands hands;
     private Gstats stats;
     private Gplayers players;
+    private GendMsg endMsg;
     
     /**
      * Tämä luokka huolehtii kaikkien komponenttien piirrosta tiettyjen aikojen
@@ -29,6 +30,7 @@ public class Gcontroller extends JPanel implements ActionListener {
         cards = new Gcards(controller.getTable());
         hands = new Ghands(controller.getButtonController());
         stats = new Gstats(controller.getGameboard().getPlayer(1), controller.getGameboard().getPlayer(2));
+        endMsg = new GendMsg(controller);
         players = new Gplayers();
     }
 
@@ -40,6 +42,7 @@ public class Gcontroller extends JPanel implements ActionListener {
         cards.paintComponent(g);
         stats.paintComponent(g);
         players.paintComponent(g);
+        endMsg.paintComponent(g);
         t.start();
     }
 

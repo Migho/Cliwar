@@ -79,4 +79,8 @@ public class Table {
         cardUpdater.delayCardUpdate(i);
         return true;
     }
+    
+    public int getEriKorttienMaara() {
+        return Math.max(deck1.getEriKorttienMaara(), deck2.getEriKorttienMaara());
+    }
 }

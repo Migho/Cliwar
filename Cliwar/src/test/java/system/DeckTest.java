@@ -12,12 +12,7 @@ import static org.junit.Assert.*;
 public class DeckTest {
     
     Deck deck;
-    
-    @Before
-    public void setUp() {
-        deck = new Deck(new File("src/test/DeckSettingsTest.txt"));
-    }
-
+  
     @Test
     public void deck1asetustiedostonLukuToimii() {
         deck = new Deck(1);
@@ -30,13 +25,16 @@ public class DeckTest {
     
     @Test
     public void antaaKortin() {
+        deck = new Deck(1);
         int i = deck.annaKortti();
         assertTrue(i>=0);
     }
     
     @Test
-    public void kortitLoppuvatOikeaOppisesti() {
-        for(int j=0; j<5; j++) {
+    public void kortitLoppuvatJoskus() {
+        deck = new Deck(1);
+        int korttienMaara = deck.getKorttienMaara();
+        for(int j=0; j<korttienMaara; j++) {
             int i = deck.annaKortti();
             assertTrue(i>=0);
         }
@@ -46,11 +44,12 @@ public class DeckTest {
     
     @Test
     public void korttienLisaysToimii() {
+        deck = new Deck(1);
         while(deck.annaKortti() != -1) //Tyhjätään deck.
             deck.annaKortti();
-        deck.lisaaKortti(2);
+        deck.lisaaKortti(1);
         int i = deck.annaKortti();
-        assertTrue("kortin lisäys lisäsi kortin " + i + " vaikka piti lisätä 2.", i==2);
+        assertTrue("kortin lisäys lisäsi kortin " + i + " vaikka piti lisätä 1.", i==1);
     }
     
 }

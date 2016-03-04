@@ -13,12 +13,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class GameboardTest {
+public class GameboardTest extends Controller {
     Gameboard gameboard;
     
     @Before
     public void setUp() {
-        gameboard = new Gameboard();
+        gameboard = new Gameboard(this);
     }
     
     @Test

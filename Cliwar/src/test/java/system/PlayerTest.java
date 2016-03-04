@@ -31,6 +31,7 @@ public class PlayerTest {
     
     @Test
     public void statsienLisäysToimii() {
+        player.dealDamage(3, 1);
         int i=player.getStats()[0];
         player.addHp(1);
         assertTrue(i<player.getStats()[0]);

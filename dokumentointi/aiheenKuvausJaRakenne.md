@@ -2,16 +2,6 @@
 
 Esimerkkejä korteista: lisää itselle lisää HP:ta, lisää itselle magic- tai physical damage resistancea, vahingoita vastustajaa magic- tai physical damagella, nosta omaa energialimittiä, vie viholliselta HP:ta itselle, vahingoita molempia jne.
 
-**Käyttöohjeet**
-Pelin pelaaminen on yksinkertaista: peli alkaa kun sen käynnistää, ja pelissä on kummallakin pelaajalla kolme eri nappia:
-
-Pelaaja 1: A=vasen, S=valitse kortti, D=oikea.
-Pelaaja 2: B=vasen, N=valitse kortti, M=oikea. 
-
-Molemmilla pelaajilla on oma ruutunsa pelilaudalla, jota voi siirtää kortista toiseen yllä olevilla näppäimillä. Valitse kortti -näppäimellä kortti valitaan, ja sen efektit astuvat voimaan vain mikäli pelaajalla on tarpeeksi energiaa (statsit näkyvät ylhäällä). Valitettavasti vielä korteissa ei lue paljonko ne vievät energiaa, tai mitä niistä tapahtuu. Ehkä jonain päivänä.
-
-Kun pelaajan HP tippuu negatiiviseksi, hän on hävinnyt pelin ja vastapuoli on voittaja.
-
 **Käyttäjät:** Erilaisia käyttäjiä ei ole. On vain kaksi pelaajaa, joilla molemmilla on samat oikeudet.
 
 **Kaikkien käyttäjien toiminnot:**

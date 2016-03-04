@@ -25,7 +25,6 @@ Kun pelaajan HP tippuu negatiiviseksi, hän on hävinnyt pelin ja vastapuoli on 
   - Pelaaja voi siirtää valitsintaan milloin tahansa. Tällöin valitsin siirtyy pelaajan näppäilyjen mukaan joko vasemmalle tai oikealle.
 
 ![Alt text](Luokkakaavio.jpg)
-Sekvenssikaavio, joka kuvaa ohjelman (logiikkapuolen) käynnistymistä:
 
 **Rakennekuvaus**
 Peli on jaettu kahteen eri pakettiin: system ja gui. Paketin GUI kaikkiin luokkiin on laitettu kirjain G (luokkakaaviossa kirjainyhdistelmä GUI), jotta ne eivät menisi sekaisin paketin SYSTEM samankaltaisten luokkien kanssa. Luokka Launcher, joka on paketissa SYSTEM, käynnistää sovelluksen toiminnan. Luokka Glauncher käynnistää graafisen toiminnan.
@@ -34,6 +33,7 @@ SYSTEMin luokka Controller ja GUIn luokka Gcontroller yhdistävät omien paketti
 
 SYSTEM on hieman monimutkaisempi paketti. Lyhyesti: luokkaryhmä Table, CardUpdater ja Deck huolehtivat korttien päivittämisestä pöydällä. Luokkaryhmä ButtonController ja ButtonListener huolehtivat käyttäjän toimintaan reagoimisesta. Luokkaryhmä Gameboard, CardDatabase, Player ja EnergyUpdater huolehtivat sen sijaan virtuaalisen pelaajahahmon statistiikasta ja korttien efektien aktivoinnista. Controller yhdistää nämä toiminnallisuudet.
 
+Sekvenssikaavio, joka kuvaa ohjelman (logiikkapuolen) käynnistymistä:
 ![Alt text](Sekvenssikaavio-aloitus.jpg)
 Sekvenssikaavio, joka kuvaa sitä, kun pelaaja siirtää valitsinta ja aktivoi kortin:
 ![Alt text](Sekvenssikaavio-kortinValinta.jpg)

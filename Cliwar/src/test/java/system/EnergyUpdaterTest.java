@@ -27,4 +27,14 @@ public class EnergyUpdaterTest {
         Thread.sleep(2100);
         assertTrue(i<player1.getStats()[3] || player1.getStats()[3] == player1.getStats()[4]);
     }
+    
+    @Test
+    public void EnergiaaEiTuleLisaaJosStopRunning() throws InterruptedException {
+        energyUpdater.stopRunning();
+        int i=player1.getStats()[3];
+        Thread.sleep(2100);
+        assertTrue(i==player1.getStats()[3]);
+    }
+    
+    
 }

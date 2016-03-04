@@ -12,7 +12,7 @@ import system.Table;
 public class Gcards extends JPanel {
     
     private BufferedImage[] korttikuvat;
-    private int korttienMaara = 3;
+    private int korttienMaara;
     private Table table;
 
     /**
@@ -22,10 +22,11 @@ public class Gcards extends JPanel {
     
     public Gcards(Table table) {
         this.table = table;
+        korttienMaara = table.getEriKorttienMaara();
         korttikuvat = new BufferedImage[korttienMaara];
         for (int i = 0; i < korttienMaara; i++) {
             try {
-                korttikuvat[i] = ImageIO.read(new File("src/main/resources/graphics/" + i + ".jpg"));
+                korttikuvat[i] = ImageIO.read(getClass().getResourceAsStream("/graphics/" + i + ".jpg"));
             } catch (IOException ex) {
                 System.out.println("Virhe lukiessa kortille " + i + " grafiikkaa!");
             }

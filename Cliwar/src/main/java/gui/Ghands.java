@@ -21,8 +21,8 @@ public class Ghands extends JPanel {
     public Ghands(ButtonController buttonController) {
         this.buttonController = buttonController;
         try {
-            hand1 = ImageIO.read(new File("src/main/resources/graphics/Hand1.jpg"));
-            hand2 = ImageIO.read(new File("src/main/resources/graphics/Hand2.jpg"));
+            hand1 = ImageIO.read(getClass().getResourceAsStream("/graphics/Hand1.jpg"));
+            hand2 = ImageIO.read(getClass().getResourceAsStream("/graphics/Hand2.jpg"));
         } catch (IOException ex) {
             System.out.println("Virhe lukiessa käsi-implikaattoreille kuvia!");
         }

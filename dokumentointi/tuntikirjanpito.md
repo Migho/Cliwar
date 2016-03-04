@@ -16,6 +16,10 @@
 
 **19.2.2016** 9h, testien tekemistä, GUI:n kanssa täydellistä takkuamista, muuta kivaa ihmettelyä.
 
-**25.9.2016** 5h graafisen käyttöliittymän toteutusta
+**25.2.2016** 5h graafisen käyttöliittymän toteutusta
 
-**26.9.2016** 6h deadline6 asioiden toteutusta ja viimeistelyä.
+**26.2.2016** 6h deadline6 asioiden toteutusta ja viimeistelyä.
+
+**3.2.2016** 4h yleistä korjailua, viimeisten ominaisuuksien lisäystä
+
+**4.2.2016** 7h Testien lisäilyä ja projektin viimeistelyä loppupalautusta varten
