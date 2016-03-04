@@ -21,12 +21,12 @@ public class Gstarter {
         
         guicontroller = new Gcontroller(controller);
         f.add(guicontroller);
-        f.setVisible(true);
         f.setSize(1024, 720);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setTitle("SUPER EPIC DINO FIGHT SHOWDOWN");
         f.setResizable(false);
         f.addKeyListener(controller.getButtonController().getKeyboardListener());
+        f.setVisible(true);
     }
 
 }

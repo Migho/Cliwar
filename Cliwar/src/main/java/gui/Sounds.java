@@ -27,10 +27,11 @@ public class Sounds {
      */
     public Sounds(Player player1, Player player2) {
         try {
-            calmAudio = AudioSystem.getAudioInputStream(getClass().getResourceAsStream("/music/music.wav"));
+            //calmAudio = AudioSystem.getAudioInputStream(getClass().getResourceAsStream("/music/music.wav"));
+            calmAudio = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getResourceAsStream("/music/music.wav")));
             calmClip = AudioSystem.getClip();
             calmClip.open(calmAudio);
-            panicAudio = AudioSystem.getAudioInputStream(getClass().getResourceAsStream("/music/panicmusic.wav"));
+            panicAudio = AudioSystem.getAudioInputStream(new BufferedInputStream(getClass().getResourceAsStream("/music/panicmusic.wav")));
             panicClip = AudioSystem.getClip();
             panicClip.open(panicAudio);
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException uae) {
