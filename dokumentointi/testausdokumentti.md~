@@ -1,7 +1,7 @@
 Ohjelman toiminta on omasta mielestäni testattu tarpeeksi kattavasti.
 
-LINE COVERAGE: 77%
-MUTATION COVERAGE: 54%
+LINE COVERAGE: 80%
+MUTATION COVERAGE: 60%
 
 **ButtonController**: Kaikki metodit ja järkevät asiat testattu.
 **CardDataBase**: Testaamatta jätetty esim korttien määrän oikeellisuus, sillä se olisi vaatinut tiedoston avaamista JUnit-testissä (joka puolestaan olisi toteutettu täysin samalla tavalla kuin metodin oma tiedoston avaamissysteemi).
