@@ -1,5 +1,5 @@
 card_id cost    ph.d.e  ph.d.s  mg.d.e  mg.d.s  pured.e pured.s armor.e armor.s mgres.e mgres.s eng/m.e eng/m.s
-3
+8
 0       -3      4       0       0       0       0       0       0       0       0       0       0       0       Physical damage -kortti
 1       -2      0       0       2       0       0       0       0       0       0       0       0       0       Magic damage -kortti
 2       -3      0       0       0       0       0       0       0       0       0       0       0       20      +20% energiatuottoa itselle

@@ -48,4 +48,12 @@ public class ControllerTest {
         assertTrue(c.getPelinTilanne() == 3);
     }
     
+    @Test
+    @SuppressWarnings("empty-statement")
+    public void korttiJotaEiVoiPelataEiTeeMitään() {
+        boolean a = c.nostaKortti(0, 1);
+        while(a=c.nostaKortti(0, 1));
+        assertFalse(c.nostaKortti(0, 1));
+    }
+    
 }

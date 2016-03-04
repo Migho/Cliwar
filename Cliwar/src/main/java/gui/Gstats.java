@@ -38,5 +38,6 @@ public class Gstats extends JPanel {
         g.drawString("ARMOR: " + i[1], 532, 40);
         g.drawString("MAGIC RESISTANCE: " + i[2], 532, 60);
         g.drawString("ENERGY: " + i[3] + "/" + i[4], 532, 80);
+        
     }
 }

@@ -30,6 +30,14 @@ public class GameboardTest extends Controller {
     }
     
     @Test
+    public void PalauttaaPelaajatOikein() {
+        assertTrue(gameboard.getPlayer(0) == null);
+        assertTrue(gameboard.getPlayer(1) != null);
+        assertTrue(gameboard.getPlayer(2) != null);
+        assertTrue(gameboard.getPlayer(3) == null);
+    }
+    
+    @Test
     public void KortinAktivointiToimii() {
         int[] a = gameboard.getPlayer(1).getStats();
         int[] b = gameboard.getPlayer(2).getStats();

@@ -7,4 +7,4 @@ card_id cost    ph.d.e  ph.d.s  mg.d.e  mg.d.s  pured.e pured.s armor.e armor.s 
 4	-2	0	0	0	0	0	0	-1	0	0	0	0	0	-1 armor viholliselle
 5	-2	0	0	0	0	0	0	0	1	0	0	0	0	+1 armor itselle
 6	-2	0	0	0	0	0	0	0	0	0	1	0	0	+1 magic armoria itelle
-7	0	0	0	0	0	2	2	0	0	0	0	0	0	-2 pure damagea molemmille
+7	0	0	0	0	0	4	4	0	0	0	0	0	0	-2 pure damagea molemmille

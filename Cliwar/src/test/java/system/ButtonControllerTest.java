@@ -1,5 +1,6 @@
 package system;
 
+import java.util.Arrays;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -54,6 +55,23 @@ public class ButtonControllerTest extends Controller{
         assertTrue(a);
         assertTrue(b);
     }
+    
+    @Test
+    public void kasiaEiVoiSiirrellaJosTehdaanStopListening() {
+        buttonController.stopListening();
+        int[] i = buttonController.getKadet();
+        buttonController.siirraKattaVasemmalle(1);
+        buttonController.siirraKattaVasemmalle(2);
+        buttonController.siirraKattaVasemmalle(1);
+        buttonController.siirraKattaVasemmalle(2);
+        buttonController.siirraKattaOikealle(1);
+        buttonController.siirraKattaOikealle(2);
+        buttonController.otaKortti(1);
+        buttonController.otaKortti(2);
+        assertFalse(a);
+        assertFalse(b);
+        assertTrue(Arrays.equals(i, buttonController.getKadet()));
+}
     
     @Override
     public boolean nostaKortti(int kasi, int pelaaja) {
